@@ -10,5 +10,5 @@ urlpatterns = [
     path('panels/', views.panels, name="panels"),
     path('widgets/', views.widgets, name="widgets"),
     path('login/', views.login, name="login"),
-    path('api/v1/group/', views.getjson, name="getjson"),
+    # path('api/v1/drivelesscar/', views.getjson, name="getjson"),
 ]

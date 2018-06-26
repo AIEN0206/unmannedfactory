@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'lumino',
     'corsheaders',
 ]
@@ -83,9 +84,9 @@ DATABASES = {
         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'ENGINE': 'django.db.backends.mysql',
         # 'NAME': 'aicoco',
-        'NAME': 'northwind',
-        'USER': 'aicoco',
-        'PASSWORD': 'aicoco',
+        'NAME': 'yogurt',
+        'USER': 'root',
+        'PASSWORD': 'root',
         'HOST': 'localhost',
         'PORT': '3306',
     }

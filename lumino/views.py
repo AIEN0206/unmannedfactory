@@ -1,8 +1,16 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 from django.core import serializers
-from .models import Employees
+from .models import Drivelesscar
 import json
+from lumino.models import Drivelesscar
+from lumino.serializers import DrivelesscarSerializer
+
+from rest_framework import viewsets
+
+class DrivelesscarViewSet(viewsets.ModelViewSet):
+    queryset = Drivelesscar.objects.all()
+    serializer_class = DrivelesscarSerializer
 
 # Create your views here.
 def index(request):
@@ -24,8 +32,8 @@ def login(request):
     pageTitle = "#"
     return render(request, "lumino/login.html", locals())
 
-def getjson(request):
-    pageTitle = "#"
-    data = serializers.serialize("json", Employees.objects.all())
-    data2= json.loads(data)
-    return JsonResponse(data2, safe=False)
+# def getjson(request):
+#     pageTitle = "#"
+#     data = serializers.serialize("json", Drivelesscar.objects.all())
+#     data2= json.loads(data)
+#     return JsonResponse(data2, safe=False)
