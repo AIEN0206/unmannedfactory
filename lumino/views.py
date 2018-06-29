@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 from django.core import serializers
-from .models import Drivelesscar
+from .models import Drivelesscar as dr
 import json
 from lumino.models import Drivelesscar
 from lumino.serializers import DrivelesscarSerializer
@@ -18,6 +18,9 @@ def index(request):
     return render(request, "lumino/index.html", locals())
 def charts(request):
     pageTitle = "#"
+    drs = dr()
+    data = drs.all()
+    
     return render(request, "lumino/charts.html", locals())
 def elements(request):
     pageTitle = "#"
